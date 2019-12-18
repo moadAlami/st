@@ -85,6 +85,10 @@ void die(const char *, ...);
 void redraw(void);
 void draw(void);
 
+/* scrollback patch */
+void kscrolldown(const Arg *);
+void kscrollup(const Arg *);
+
 /* externalpipe patch */
 void externalpipe(const Arg *);
 
