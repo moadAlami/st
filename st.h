@@ -90,6 +90,9 @@ void printsel(const Arg *);
 void sendbreak(const Arg *);
 void toggleprinter(const Arg *);
 
+/* copyurl patch */
+void copyurl(const Arg *);
+
 int tattrset(int);
 void tnew(int, int);
 void tresize(int, int);
