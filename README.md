@@ -41,6 +41,7 @@ This build uses the following patches:
   * [keyboard select](https://st.suckless.org/patches/keyboard_select/) - This patch allows you to select and copy text to primary buffer with keyboard shortcuts like the perl extension keyboard-select for urxvt.
   * [scrollback](https://st.suckless.org/patches/scrollback/) - Scroll back through terminal output using `ctrl+shift+{k, j}` or `shift+mousewheel`.
   * [vertcenter](https://st.suckless.org/patches/vertcenter/) - Vertically center lines in the space available if you have set a larger chscale in config.h.
+  * [xresources](https://st.suckless.org/patches/xresources/) - This patch adds the ability to configure st via Xresources. At startup, st will read and apply the resources named in the resources[] array in config.h.
 
 ## Credits
 
