@@ -28,6 +28,13 @@ the st terminfo entry with the following command:
 
 See the man page for additional details.
 
+
+## Patches
+
+This build uses the following patches:
+
+  * [alpha](https://st.suckless.org/patches/alpha/) - This patch allows users to change the opacity of the background. Note that you need an X composite manager (e.g. compton, xcompmgr) to make this patch effective.
+
 ## Credits
 
 Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.
