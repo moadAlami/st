@@ -35,7 +35,7 @@ This build uses the following patches:
 
   * [alpha](https://st.suckless.org/patches/alpha/) - This patch allows users to change the opacity of the background. Note that you need an X composite manager (e.g. compton, xcompmgr) to make this patch effective.
   * [bold is not bright](https://st.suckless.org/patches/bold-is-not-bright/) - In st, bold text is rendered with a bold font in the bright variant of the current color. This patch makes bold text rendered simply as bold, leaving the color unaffected.
-  * [boxdraw](https://st.suckless.org/patches/boxdraw/) - ustom rendering of lines/blocks/braille characters for gapless alignment.
+  * [boxdraw](https://st.suckless.org/patches/boxdraw/) - Custom rendering of lines/blocks/braille characters for gapless alignment.
 
 ## Credits
 
