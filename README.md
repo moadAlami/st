@@ -38,6 +38,7 @@ This build uses the following patches:
   * [boxdraw](https://st.suckless.org/patches/boxdraw/) - Custom rendering of lines/blocks/braille characters for gapless alignment.
   * [copyurl](https://st.suckless.org/patches/copyurl/) - Select and copy the last URL displayed with `ctrl+u`. Multiple invocations cycle through the available URLs.
   * [externalpipe](https://st.suckless.org/patches/externalpipe/) - Reading and writing st's screen through a pipe.
+  * [keyboard select](https://st.suckless.org/patches/keyboard_select/) - This patch allows you to select and copy text to primary buffer with keyboard shortcuts like the perl extension keyboard-select for urxvt.
 
 ## Credits
 

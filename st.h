@@ -121,6 +121,9 @@ void *xmalloc(size_t);
 void *xrealloc(void *, size_t);
 char *xstrdup(char *);
 
+/* keyboard select patch */
+int trt_kbdselect(KeySym, char *, int);
+
 /* boxdraw patch */
 int isboxdraw(Rune);
 ushort boxdrawindex(const Glyph *);
