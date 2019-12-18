@@ -121,3 +121,6 @@ extern char *termname;
 extern unsigned int tabspaces;
 extern unsigned int defaultfg;
 extern unsigned int defaultbg;
+
+/* alpha patch */
+extern float alpha;
