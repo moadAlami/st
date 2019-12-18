@@ -40,6 +40,7 @@ This build uses the following patches:
   * [externalpipe](https://st.suckless.org/patches/externalpipe/) - Reading and writing st's screen through a pipe.
   * [keyboard select](https://st.suckless.org/patches/keyboard_select/) - This patch allows you to select and copy text to primary buffer with keyboard shortcuts like the perl extension keyboard-select for urxvt.
   * [scrollback](https://st.suckless.org/patches/scrollback/) - Scroll back through terminal output using `ctrl+shift+{k, j}` or `shift+mousewheel`.
+  * [vertcenter](https://st.suckless.org/patches/vertcenter/) - Vertically center lines in the space available if you have set a larger chscale in config.h.
 
 ## Credits
 

@@ -83,6 +83,10 @@ typedef struct {
 	int w, h; /* window width and height */
 	int ch; /* char height */
 	int cw; /* char width  */
+
+	/* vertcenter patch */
+	int cyo; /* char y offset */
+
 	int mode; /* window state/mode flags */
 	int cursor; /* cursor style */
 } TermWindow;
@@ -1001,6 +1005,9 @@ xloadfonts(char *fontstr, double fontsize)
 	win.cw = ceilf(dc.font.width * cwscale);
 	win.ch = ceilf(dc.font.height * chscale);
 
+	/* vertcenter patch */
+	win.cyo = ceilf(dc.font.height * (chscale - 1) / 2);
+
 	FcPatternDel(pattern, FC_SLANT);
 	FcPatternAddInteger(pattern, FC_SLANT, FC_SLANT_ITALIC);
 	if (xloadfont(&dc.ifont, pattern))
@@ -1237,7 +1244,12 @@ xmakeglyphfontspecs(XftGlyphFontSpec *specs, const Glyph *glyphs, int len, int x
 	FcCharSet *fccharset;
 	int i, f, numspecs = 0;
 
-	for (i = 0, xp = winx, yp = winy + font->ascent; i < len; ++i) {
+
+	/* vertcenter patch */
+	/* for (i = 0, xp = winx, yp = winy + font->ascent; i < len; ++i) { */
+	for (i = 0, xp = winx, yp = winy + font->ascent + win.cyo; i < len; ++i) {
+
+
 		/* Fetch rune and mode for current glyph. */
 		rune = glyphs[i].u;
 		mode = glyphs[i].mode;
@@ -1262,7 +1274,9 @@ xmakeglyphfontspecs(XftGlyphFontSpec *specs, const Glyph *glyphs, int len, int x
 				font = &dc.bfont;
 				frcflags = FRC_BOLD;
 			}
-			yp = winy + font->ascent;
+			/* vertcenter patch */
+			/* yp = winy + font->ascent; */
+			yp = winy + font->ascent + win.cyo;
 		}
 
 		/* boxdraw patch */
@@ -1493,12 +1507,20 @@ xdrawglyphfontspecs(const XftGlyphFontSpec *specs, Glyph base, int len, int x, i
 
 	/* Render underline and strikethrough. */
 	if (base.mode & ATTR_UNDERLINE) {
-		XftDrawRect(xw.draw, fg, winx, winy + dc.font.ascent + 1,
+
+		/* vertcenter patch */
+		/* XftDrawRect(xw.draw, fg, winx, winy + dc.font.ascent + 1, */
+		XftDrawRect(xw.draw, fg, winx, winy + win.cyo + dc.font.ascent + 1,
+
 				width, 1);
 	}
 
 	if (base.mode & ATTR_STRUCK) {
-		XftDrawRect(xw.draw, fg, winx, winy + 2 * dc.font.ascent / 3,
+
+		/* vertcenter patch */
+		/* XftDrawRect(xw.draw, fg, winx, winy + 2 * dc.font.ascent / 3, */
+		XftDrawRect(xw.draw, fg, winx, winy + win.cyo + 2 * dc.font.ascent / 3,
+
 				width, 1);
 	}
 
