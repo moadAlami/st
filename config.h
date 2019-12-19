@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Mono:pixelsize=16:antialias=true:autohint=true";
+static char *font = "mono:pixelsize=16:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -100,31 +100,47 @@ float alpha = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	/* black */
+	"#48483e",
+	"#76715e",
 
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	/* red */
+	"#dc2566",
+	"#fa2772",
+
+	/* green */
+	"#8fc029",
+	"#a7e22e",
+
+	/* yellow */
+	"#d4c96e",
+	"#e7db75",
+
+	/* blue */
+	"#55bcce",
+	"#66d9ee",
+
+	/* magenta */
+	"#9358fe",
+	"#ae82ff",
+
+	/* cyan */
+	"#56b7a5",
+	"#66efd5",
+
+	/* white */
+	"#acada1",
+	"#cfd0c2",
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
+	/* "#cccccc", */
+	/* "#555555", */
+	"#000000",
+	"#FFFFFF",
+	"#00FF00",
+
 
 	/* alpha patch */
 	"black",
@@ -136,14 +152,16 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
+unsigned int defaultfg = 257;
 
 /* alpha patch */
 /* unsigned int defaultbg = 0; */
-unsigned int defaultbg = 258;
+unsigned int defaultbg = 256;
 
-static unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+/* static unsigned int defaultcs = 256; */
+static unsigned int defaultcs = 258;
+/* static unsigned int defaultrcs = 257; */
+static unsigned int defaultrcs = 0;
 
 /*
  * Default shape of cursor
