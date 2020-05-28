@@ -274,6 +274,9 @@ static Shortcut shortcuts[] = {
 	/* scrollback patch */
 	{ TERMMOD,            XK_K,     kscrollup,      {.i = 1} },
 	{ TERMMOD,            XK_J,   kscrolldown,    {.i = 1} },
+
+	/* open_copied_url patch */
+	{ ControlMask,               XK_o,           opencopied,     {.v = "firefox"} },
 };
 
 /*

@@ -92,6 +92,9 @@ void kscrollup(const Arg *);
 /* externalpipe patch */
 void externalpipe(const Arg *);
 
+/* open_copied_url patch */
+void opencopied(const Arg *);
+
 void printscreen(const Arg *);
 void printsel(const Arg *);
 void sendbreak(const Arg *);
