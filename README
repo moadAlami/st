@@ -28,6 +28,10 @@ the st terminfo entry with the following command:
 
 See the man page for additional details.
 
+Patches applied
+---------------
+boxdraw - bold is not bright - scrollback - alpha
+
 Credits
 -------
 Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.
